@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_db
+    username: user_db
+    password: user_db
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:8888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/
